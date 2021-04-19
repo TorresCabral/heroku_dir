@@ -32,7 +32,7 @@ server = app.server
 #Taken from https://www.ecdc.europa.eu/en/geographical-distribution-2019-ncov-cases
 df = pd.read_csv("COVID-19-geographic-disbtribution-worldwide-2020-03-29.csv")
 
-dff = df.groupby('countriesAndTerritories', as_index=False)[['deaths','cases']].sum()
+dff = df.groupby('fases', as_index=False)[['corrente','tensao']].sum()
 print (dff[:5])
 # Set up the layout
 app.layout = html.Div(children=[
@@ -84,7 +84,7 @@ app.layout = html.Div(children=[
                          {'label': 'Corrente Medida (A)', 'value': 'corrente'},
                          {'label': 'Tensão Medida (A)', 'value': 'tensao'}
                 ],
-                value='deaths',
+                value='corrente',
                 multi=False,
                 clearable=False
             ),
@@ -93,10 +93,10 @@ app.layout = html.Div(children=[
         html.Div([
         dcc.Dropdown(id='piedropdown',
             options=[
-                     {'label': 'Deaths', 'value': 'deaths'},
-                     {'label': 'Cases', 'value': 'cases'}
+                     {'label': 'Corrente Medida (A)', 'value': 'corrente'},
+                     {'label': 'Tesão Medida (V)', 'value': 'tensao'}
             ],
-            value='cases',
+            value='tensao',
             multi=False,
             clearable=False
         ),
@@ -132,32 +132,32 @@ app.layout = html.Div(children=[
 )
 def update_data(chosen_rows,piedropval,linedropval):
     if len(chosen_rows)==0:
-        df_filterd = dff[dff['countriesAndTerritories'].isin(['China','Iran','Spain','Italy'])]
+        df_filterd = dff[dff['fases'].isin(['China','Iran','Spain','Italy'])]
     else:
         print(chosen_rows)
         df_filterd = dff[dff.index.isin(chosen_rows)]
 
     pie_chart=px.pie(
             data_frame=df_filterd,
-            names='countriesAndTerritories',
+            names='fases',
             values=piedropval,
             hole=.3,
-            labels={'countriesAndTerritories':'Countries'}
+            labels={'fases':'Countries'}
             )
 
 
     #extract list of chosen countries
-    list_chosen_countries=df_filterd['countriesAndTerritories'].tolist()
+    list_chosen_countries=df_filterd['fases'].tolist()
     #filter original df according to chosen countries
     #because original df has all the complete dates
-    df_line = df[df['countriesAndTerritories'].isin(list_chosen_countries)]
+    df_line = df[df['fases'].isin(list_chosen_countries)]
 
     line_chart = px.line(
             data_frame=df_line,
             x='dateRep',
             y=linedropval,
-            color='countriesAndTerritories',
-            labels={'countriesAndTerritories':'Countries', 'dateRep':'date'},
+            color='fases',
+            labels={'fases':'Countries', 'dateRep':'date'},
             )
     line_chart.update_layout(uirevision='foo')
 
