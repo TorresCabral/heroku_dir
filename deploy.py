@@ -15,7 +15,7 @@ import dash_html_components as html
 from dash.dependencies import Input, Output
 
 # Define variables
-myheading = 'Testando Python no Heroku'
+myheading = 'Circuitos Trifásicos Desequilibrados'
 apptitle = "UFU!"
 milk_data = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/monthly-milk-production-pounds.csv')
 time_series = milk_data['Monthly milk production (pounds per cow)']
@@ -38,10 +38,10 @@ print (dff[:5])
 app.layout = html.Div(children=[
 
     html.H1(myheading),
+    html.H2('Configuração Estrela')
     html.P('Disciplina: Exp. Circ. Elétricos II'),
     html.P('Docente: Prof. Dr. Wellington Maycon Santos Bernardes'),
     html.P('Discentes: Iohana A. Torres Cabral e Wallison Junio'),
-    html.I('Caros alunos, aqui segue um exemplo de uma página feita no Python e que está disponibilizada na Internet.'),
 
     html.Div([
         dash_table.DataTable(
@@ -67,11 +67,11 @@ app.layout = html.Div(children=[
             # fixed_rows={ 'headers': True, 'data': 0 },
             # virtualization=False,
             style_cell_conditional=[
-                {'if': {'column_id': 'countriesAndTerritories'},
+                {'if': {'column_id': 'fases'},
                     'width': '40%', 'textAlign': 'left'},
-                {'if': {'column_id': 'deaths'},
+                {'if': {'column_id': 'corrente'},
                     'width': '30%', 'textAlign': 'left'},
-                {'if': {'column_id': 'cases'},
+                {'if': {'column_id': 'tensao'},
                     'width': '30%', 'textAlign': 'left'},
             ],
         ),
@@ -81,8 +81,8 @@ app.layout = html.Div(children=[
         html.Div([
             dcc.Dropdown(id='linedropdown',
                 options=[
-                         {'label': 'Deaths', 'value': 'deaths'},
-                         {'label': 'Cases', 'value': 'cases'}
+                         {'label': 'Corrente Medida (A)', 'value': 'corrente'},
+                         {'label': 'Tensão Medida (A)', 'value': 'tensao'}
                 ],
                 value='deaths',
                 multi=False,
