@@ -83,6 +83,14 @@ app.layout = html.Div(children=[
     ])
 ])
 
+
+@app.callback(
+    Output("number-out", "children"),
+    Input("carga", "value"),
+)
+def number_render(iA, iB, iC):
+    return "Ia: {}, Ib: {}, Ic: {}, In: {}".format(iA, iB, iC, iN)
+
 #------------------------------------------------------------------
 
 
