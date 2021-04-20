@@ -60,22 +60,22 @@ app.layout = html.Div(children=[
             placeholder='Carga',
             type='text',
             value='carga'
-        )
+        ),
         dcc.Textarea(
             placeholder='Ia = ' + iA,
             value='Ia = ' + iA,
             style={'width': '100%'}
-        ) 
+        ), 
         dcc.Textarea(
             placeholder='Ib = ' + iB,
             value='Ib = ' + iB,
             style={'width': '100%'}
-        ) 
+        ), 
         dcc.Textarea(
             placeholder='Ic = ' + iC,
             value='Ic = ' + iC,
             style={'width': '100%'}
-        )
+        ),
         dcc.Textarea(
             placeholder='In = ' + iN,
             value='In = ' + iN,
