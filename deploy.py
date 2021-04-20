@@ -58,7 +58,7 @@ app.layout = html.Div(children=[
         dcc.Input(
             placeholder='Carga',
             type='text',
-            value='carga'
+            id='carga'
         ),
         dcc.Textarea(
             placeholder='Ia = ' + iA,
