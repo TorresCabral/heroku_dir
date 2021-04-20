@@ -22,22 +22,6 @@ apptitle = "UFU!"
 milk_data = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/monthly-milk-production-pounds.csv')
 moodle_address = 'http://www.ufu.br/tags/moodle'
 
-# Calculo
-def calculo:
-    aA = 0
-    aB = 120
-    aC = -120
-    Van = carga*exp(1j*deg2rad(aA))
-    Za = 15 + 0j
-    iA = Van/Za
-    Vbn = carga*exp(1j*deg2rad(aB))
-    Zb = 10 + 5j
-    iB = Vbn/Zb
-    Vcn = carga*exp(1j*deg2rad(aC))
-    Zc = 6 - 8j
-    iC = Vbn/Zb
-    iN = iA + iB + iC
-
 # Initiate app
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
