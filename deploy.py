@@ -57,7 +57,7 @@ app.layout = html.Div(children=[
             ]
         ),
         html.Div(id='output_div')
-    ])className='row'),
+    ])
 ])
 @app.callback(
     Output('output_div', 'children'),
