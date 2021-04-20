@@ -53,17 +53,16 @@ app.layout = html.Div(children=[
     html.P('Disciplina: Exp. Circ. Elétricos II'),
     html.P('Docente: Prof. Dr. Wellington Maycon Santos Bernardes'),
     html.P('Discentes: Iohana A. Torres Cabral e Wallison Junio'),
-
+    html.Var(iA),
+    html.Var(iB),
+    html.Var(iC),
+    html.Var(iN),
     html.Div([
         dcc.Input(
             placeholder='Carga',
             type='text',
             id='carga'
-        ),
-        html.Var(iA),
-        html.Var(iB),
-        html.Var(iC),
-        html.Var(iN),
+        ),        
     ])
     
 ])
