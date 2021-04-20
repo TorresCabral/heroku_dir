@@ -23,4 +23,11 @@ def calculo():
 
     print(iC)
 
+    '''<img
+     src=".\assets\trifasico.png"
+     alt="Carga conectada em triângulo desequilibrada"
+     width="500"
+     height="500"
+     >'''
+
 
