@@ -48,9 +48,9 @@ app.layout = html.Div(children=[
         ),        
     ])
     # Calculo
-    angA = 0
-    angB = 120
-    angC = -120
+    int angA = 0
+    int angB = 120
+    int angC = -120
     Van = carga*exp(1j*deg2rad(angA))
     Za = 15 + 0j
     iA = Van/Za
