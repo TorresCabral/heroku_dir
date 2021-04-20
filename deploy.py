@@ -60,27 +60,17 @@ app.layout = html.Div(children=[
             type='text',
             id='carga'
         ),
-        dcc.Textarea(
-            placeholder='Ia = ' + iA,
-            value='Ia = ' + iA,
-            style={'width': '100%'}
-        ), 
-        dcc.Textarea(
-            placeholder='Ib = ' + iB,
-            value='Ib = ' + iB,
-            style={'width': '100%'}
-        ), 
-        dcc.Textarea(
-            placeholder='Ic = ' + iC,
-            value='Ic = ' + iC,
-            style={'width': '100%'}
-        ),
-        dcc.Textarea(
-            placeholder='In = ' + iN,
-            value='In = ' + iN,
-            style={'width': '100%'}
-        )  
+        html.Var(iA),
+        html.Var(iB),
+        html.Var(iC),
+        html.Var(iN),
     ])
+    <img class="fit-picture"
+     src=".\assets\trifasico.png"
+     alt="Carga conectada em triângulo desequilibrada"
+     width="500"
+     height="500"
+     >
 ])
 
 
