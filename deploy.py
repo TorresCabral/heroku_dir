@@ -22,7 +22,8 @@ apptitle = "UFU!"
 moodle_address = 'http://www.ufu.br/tags/moodle'
 
 # Initiate app
-app = dash.Dash(__name__)
+external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
+app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 app.title=apptitle
 server = app.server
 
