@@ -38,7 +38,7 @@ print (dff[:5])
 app.layout = html.Div(children=[
 
     html.H1(myheading),
-    html.H2('Configuração Estrela')
+    #html.H2('Configuração Estrela')
     html.P('Disciplina: Exp. Circ. Elétricos II'),
     html.P('Docente: Prof. Dr. Wellington Maycon Santos Bernardes'),
     html.P('Discentes: Iohana A. Torres Cabral e Wallison Junio'),
