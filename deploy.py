@@ -41,7 +41,7 @@ app.layout = html.Div(children=[
     html.Div([
         dcc.Input(
             placeholder='Carga',
-            type='text',
+            type='number',
             id='carga'
         ),                
     ])  
