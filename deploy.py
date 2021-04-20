@@ -44,7 +44,13 @@ app.layout = html.Div(children=[
             placeholder='Carga',
             type='text',
             id='carga'
-        ),        
+        ),
+        <img
+            src=".\assets\trifasico.png"
+            alt="Carga conectada em triângulo desequilibrada"
+            width="500"
+            height="500"
+        >        
     ])    
 ])
 
