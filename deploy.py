@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
 
 """
-Created on Fri Sep 11 20:35:16 2020
-@author: Prof. Dr. Wellington M. S. Bernardes
+Created on Fri Mar 29 23:10:03 2021
+@author: Iohana e Wallisson
 """
-import calculoce2
-from numpy import *
-import pandas as pd
-import plotly.express as px
-import plotly.graph_objects as go
+#import calculoce2
+#from numpy import *
+#import pandas as pd
+#import plotly.express as px
+#import plotly.graph_objects as go
 import dash
 import dash_table
 import dash_core_components as dcc
@@ -19,12 +19,10 @@ from dash.dependencies import Input, Output
 # Define variables
 myheading = 'Circuitos Trifásicos Desequilibrados (Configuração Estrela)'
 apptitle = "UFU!"
-milk_data = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/monthly-milk-production-pounds.csv')
 moodle_address = 'http://www.ufu.br/tags/moodle'
 
 # Initiate app
-external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
-app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
+app = dash.Dash(__name__)
 app.title=apptitle
 server = app.server
 
