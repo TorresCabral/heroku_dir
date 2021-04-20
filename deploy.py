@@ -65,7 +65,7 @@ app.layout = html.Div(children=[
         html.Var(iC),
         html.Var(iN),
     ])
-    <img class="fit-picture"
+    <img
      src=".\assets\trifasico.png"
      alt="Carga conectada em triângulo desequilibrada"
      width="500"
