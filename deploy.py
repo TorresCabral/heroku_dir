@@ -22,6 +22,21 @@ apptitle = "UFU!"
 milk_data = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/monthly-milk-production-pounds.csv')
 moodle_address = 'http://www.ufu.br/tags/moodle'
 
+# Calculo
+def calculo():
+    angA = 0
+    angB = 120
+    angC = -120
+    Van = carga*exp(1j*deg2rad(angA))
+    Za = 15 + 0j
+    iA = Van/Za
+    Vbn = carga*exp(1j*deg2rad(angB))
+    Zb = 10 + 5j
+    iB = Vbn/Zb
+    Vcn = carga*exp(1j*deg2rad(angC))
+    Zc = 6 - 8j
+    iC = Vbn/Zb
+    iN = iA + iB + iC
 
 # Initiate app
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
@@ -42,10 +57,30 @@ app.layout = html.Div(children=[
 
     html.Div([
         dcc.Input(
-        placeholder='Enter a value...',
-        type='text',
-        value=''
+            placeholder='Carga',
+            type='text',
+            value='carga'
         )
+        dcc.Textarea(
+            placeholder='Ia = ' + iA,
+            value='Ia = ' + iA,
+            style={'width': '100%'}
+        ) 
+        dcc.Textarea(
+            placeholder='Ib = ' + iB,
+            value='Ib = ' + iB,
+            style={'width': '100%'}
+        ) 
+        dcc.Textarea(
+            placeholder='Ic = ' + iC,
+            value='Ic = ' + iC,
+            style={'width': '100%'}
+        )
+        dcc.Textarea(
+            placeholder='In = ' + iN,
+            value='In = ' + iN,
+            style={'width': '100%'}
+        )  
     ])
 ])
 
